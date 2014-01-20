@@ -48,7 +48,7 @@ Before you can add a `SliderPreference` to your application, you must first add 
 </plurals>
 ```
 
-Remember to add the ``app``` namespace ```xmlns:app="http://schemas.android.com/apk/res-auto``` to your top level tag. 
+Remember to add the ```app``` namespace ```xmlns:app="http://schemas.android.com/apk/res-auto``` to your top level tag.
 
 
 ## License
