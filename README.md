@@ -20,8 +20,8 @@ Android Slider Preference Library
 Before you can add a `SliderPreference` to your application, you must first add a library reference:
 
 1. Clone or download a copy of the library
-2. Import the library into Eclipse: File menu -> Import -> Existing Project into Workspace
-3. Open your application's project properties and [add a library reference][ref] to "SliderPreference"
+2. Import the library into your IDE.
+3. Add it as a module/library project and set your project to depend on it.
 
 [ref]: https://developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject
 
@@ -47,6 +47,9 @@ Before you can add a `SliderPreference` to your application, you must first add 
     <item quantity="other">%d seconds</item>
 </plurals>
 ```
+
+Remember to add the ``app``` namespace ```xmlns:app="http://schemas.android.com/apk/res-auto``` to your top level tag. 
+
 
 ## License
 
