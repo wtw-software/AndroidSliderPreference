@@ -37,7 +37,6 @@ Android Slider Preference Library
 -DartifactId=android-sliderpreference 
 -Dversion=1 
 -Dpackaging=apklib```
-
 4. Add a Maven dependency in your project: 
 
 ```
