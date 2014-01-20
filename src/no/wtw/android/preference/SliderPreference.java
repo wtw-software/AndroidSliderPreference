@@ -12,11 +12,9 @@ import android.preference.DialogPreference;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.SeekBar;
+import android.widget.TextView;
+import no.wtw.android.preference.R;
 
-/**
- * @author Jay Weisskopf
- * @author Rune M. Andersen
- */
 public class SliderPreference extends DialogPreference {
 
     protected int minValue, maxValue, resolution;
