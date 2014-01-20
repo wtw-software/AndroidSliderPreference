@@ -13,7 +13,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import no.wtw.android.preference.R;
 
 public class SliderPreference extends DialogPreference {
 
@@ -48,7 +47,7 @@ public class SliderPreference extends DialogPreference {
 
     @Override
     protected Object onGetDefaultValue(TypedArray a, int index) {
-        return a.getFloat(index, 0);
+        return a.getInt(index, 0);
     }
 
     @Override
