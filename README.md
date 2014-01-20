@@ -1,25 +1,17 @@
 Android Slider Preference Library
 =================================
 
-![Screenshot](https://raw.github.com/jayschwa/AndroidSliderPreference/master/screenshot.png)
-
 ## Overview
 
-* Slider represents a `float` between `0.0` and `1.0`
-  * Access with `SliderPreference.getValue()` or [`SharedPreferences.getFloat()`][shar]
-* Supports multiple summaries (e.g. "Low", "Medium", "High") and selects one based on the slider's position
-  * Java: `SliderPreference.setSummary(CharSequence[] summaries)`
-  * XML: `android:summary="@array/string_array_of_summaries"`
-  * A single `String` still works too
+* Slider represents a `int` of selectable value (defaults to 0-100)
 * Subclass of [`DialogPreference`][diag]
   * Supports all [dialog-specific attributes][datr] such as `android:dialogMessage`
   * Visually-consistent with Android's built-in preferences
   * Less error-prone than displaying the slider directly on the settings screen
 * [MIT License](#license)
 
-[datr]: https://developer.android.com/reference/android/preference/DialogPreference.html#lattrs "DialogPreference attributes"
 [diag]: https://developer.android.com/reference/android/preference/DialogPreference.html "DialogPreference"
-[shar]: https://developer.android.com/reference/android/content/SharedPreferences.html#getFloat(java.lang.String,%20float) "getFloat()"
+[datr]: https://developer.android.com/reference/android/preference/DialogPreference.html#lattrs "DialogPreference attributes"
 
 ## How To Use
 
@@ -37,56 +29,24 @@ Before you can add a `SliderPreference` to your application, you must first add 
 
 ``` XML
 <!-- preferences.xml -->
-<net.jayschwa.android.preference.SliderPreference
+<no.wtw.android.preference.SliderPreference
     android:key="my_slider"
     android:title="@string/slider_title"
-    android:summary="@array/slider_summaries"
-    android:defaultValue="@string/slider_default"
-    android:dialogMessage="@string/slider_message" />
+    android:defaultValue="10"
+    android:dialogMessage="@string/slider_message"
+    app:minValue="30"
+    app:maxValue="60"
+    app:unitStringReference="@plurals/seconds_plural" />
 ```
 ``` XML
 <!-- strings.xml -->
-<string name="slider_title">Temperature</string>
-<string-array name="slider_summaries">
-    <!-- You can define as many summaries as you'd like -->
-    <!-- The active summary will reflect the preference's current value -->
-    <item>Freezing</item> <!-- 0.00 to 0.25 -->
-    <item>Chilly</item>   <!-- 0.25 to 0.50 -->
-    <item>Warm</item>     <!-- 0.50 to 0.75 -->
-    <item>Boiling</item>  <!-- 0.75 to 1.00 -->
-</string-array>
-<item name="slider_default" format="float" type="string">0.5</item>
-<string name="slider_message">Optional message displayed in the dialog above the slider</string>
+<string name="slider_title">Seconds to display</string>
+<string name="slider_message">How many seconds do you want the message on screen</string>
+<plurals name="seconds_plural">
+    <item quantity="one">%d second</item>
+    <item quantity="other">%d seconds</item>
+</plurals>
 ```
-
-It is possible to define the default value directly in the attribute. The summary can also be a regular string, instead of a string array:
-
-``` XML
-<net.jayschwa.android.preference.SliderPreference
-    android:summary="This summary is static and boring"
-    android:defaultValue="0.5" />
-```
-
-## Background
-
-Sliders are recommended by Android's official [design documentation][ptrn] for specific types of settings:
-
-> Use this pattern for a setting where the range of values are not discrete and fall along a continuum.
->
-> ![Slider design pattern example](https://developer.android.com/design/media/settings_slider.png)
-
-Despite this recommendation, the Android SDK does not actually provide a [`Preference`][pref] with slider functionality. Various custom implementations can be found around the web, but many have issues such as:
-
-* The slider is displayed directly on the settings screen
-  * Higher chance of accidental clicks
-  * No way to confirm or cancel potential changes
-* Discrete values are displayed to the user
-  * Not ideal for this design pattern
-
-This library aims to be as consistent as possible with the design pattern and Android's built-in [`Preference`][pref] implementations.
-
-[ptrn]: https://developer.android.com/design/patterns/settings.html#patterns "Settings Design Patterns"
-[pref]: https://developer.android.com/reference/android/preference/Preference.html "Preference"
 
 ## License
 
