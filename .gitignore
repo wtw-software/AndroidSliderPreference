@@ -1,6 +1,8 @@
 /.settings
 /bin
 /gen
+/gen-aa
+/out
 .idea
 *.iml
 .DS_Store
