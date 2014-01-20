@@ -17,13 +17,29 @@ Android Slider Preference Library
 
 ### Add the library to your application
 
-Before you can add a `SliderPreference` to your application, you must first add a library reference:
+#### As a project library 
 
 1. Clone or download a copy of the library
 2. Import the library into your IDE.
 3. Add it as a module/library project and set your project to depend on it.
 
 [ref]: https://developer.android.com/tools/projects/projects-eclipse.html#ReferencingLibraryProject
+
+#### As a Maven dependency
+
+1. Clone or download a copy of the library
+2. Zip the project files, and rename the zip to AndroidSliderPreference.apklib
+3. Install the newly created apklib to your local Maven cache: ```mvn install:install-file -Dfile=AndroidSliderPreference.apklib -DgroupId=no.wtw -DartifactId=android-sliderpreference -Dversion=1 -Dpackaging=apklib```
+4. Add a Maven dependency in your project: 
+
+```
+<dependency>
+  <groupId>no.wtw</groupId>
+  <artifactId>android-sliderpreference</artifactId>
+  <version>1</version>
+  <type>apklib</type>
+</dependency>
+```
 
 ### Add a slider to your application
 
