@@ -32,10 +32,10 @@ Android Slider Preference Library
 3. Install the newly created apklib to your local Maven cache (one line command): 
 
 ```mvn install:install-file 
--Dfile=AndroidSliderPreference.apklib 
--DgroupId=no.wtw 
--DartifactId=android-sliderpreference 
--Dversion=1 
+-Dfile=AndroidSliderPreference.apklib \
+-DgroupId=no.wtw \
+-DartifactId=android-sliderpreference \
+-Dversion=1 \
 -Dpackaging=apklib```
 4. Add a Maven dependency in your project: 
 
