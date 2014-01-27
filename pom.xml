@@ -6,7 +6,7 @@
 
     <groupId>no.wtw.android</groupId>
     <artifactId>android-slider-preference</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <packaging>apklib</packaging>
     <name>AndroidSliderPreference</name>
 
@@ -29,7 +29,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.name}-v${project.version}-debug</finalName>
+        <finalName>${project.name}-v${project.version}</finalName>
         <sourceDirectory>src</sourceDirectory>
 
         <pluginManagement>
@@ -50,7 +50,7 @@
                 <artifactId>android-maven-plugin</artifactId>
                 <configuration>
                     <sdk>
-                        <platform>8</platform>
+                        <platform>19</platform>
                     </sdk>
                 </configuration>
                 <extensions>true</extensions>
