@@ -6,9 +6,15 @@
 
     <groupId>no.wtw.android</groupId>
     <artifactId>android-slider-preference</artifactId>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
     <packaging>apklib</packaging>
     <name>AndroidSliderPreference</name>
+
+    <scm>
+        <connection>scm:git:git@github.com/wtw-software/AndroidSliderPreference.git</connection>
+        <url>scm:git:git@github.com:wtw-software/AndroidSliderPreference.git</url>
+        <developerConnection>scm:git:git@github.com:wtw-software/AndroidSliderPreference.git</developerConnection>
+    </scm>
 
     <developers>
         <developer>
@@ -44,6 +50,24 @@
         </pluginManagement>
 
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+                <version>1.2</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>create</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <shortRevisionLength>10</shortRevisionLength>
+                    <doCheck>true</doCheck>
+                    <doUpdate>false</doUpdate>
+                </configuration>
+            </plugin>
             <plugin>
                 <!-- See http://code.google.com/p/maven-android-plugin/ -->
                 <groupId>com.jayway.maven.plugins.android.generation2</groupId>
