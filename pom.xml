@@ -34,6 +34,17 @@
         </dependency>
     </dependencies>
 
+    <distributionManagement>
+        <downloadUrl>https://github.com/wtw-software/AndroidSliderPreference</downloadUrl>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>runemartin-repo</id>
+            <name>Runes lille Maven-repo</name>
+            <url>scp://maven.runemartin.com/</url>
+            <layout>default</layout>
+        </repository>
+    </distributionManagement>
+
     <build>
         <finalName>${project.name}-v${project.version}</finalName>
         <sourceDirectory>src</sourceDirectory>
