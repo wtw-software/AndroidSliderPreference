@@ -20,7 +20,7 @@
         <repository>
             <uniqueVersion>false</uniqueVersion>
             <id>wtw-maven-repo</id>
-            <url>ftp://maven.wtw.com/</url>
+            <url>sftp://maven.wtw.com/srv/www/vhosts/maven.wtw.no/www/</url>
         </repository>
     </distributionManagement>
 
@@ -49,8 +49,8 @@
         <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ftp</artifactId>
-                <version>2.2</version>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>1.0-beta-6</version>
             </extension>
         </extensions>
 
