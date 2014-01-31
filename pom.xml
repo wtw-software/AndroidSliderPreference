@@ -16,6 +16,14 @@
         <developerConnection>scm:git:git@github.com:wtw-software/AndroidSliderPreference.git</developerConnection>
     </scm>
 
+    <distributionManagement>
+        <repository>
+            <uniqueVersion>false</uniqueVersion>
+            <id>wtw-maven-repo</id>
+            <url>ftp://maven.wtw.com/</url>
+        </repository>
+    </distributionManagement>
+
     <developers>
         <developer>
             <id>1</id>
@@ -33,16 +41,6 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-
-    <distributionManagement>
-        <downloadUrl>https://github.com/wtw-software/AndroidSliderPreference</downloadUrl>
-        <repository>
-            <uniqueVersion>false</uniqueVersion>
-            <id>runemartin-repo</id>
-            <url>ftp://maven.runemartin.com/</url>
-            <layout>default</layout>
-        </repository>
-    </distributionManagement>
 
     <build>
         <finalName>${project.name}-v${project.version}</finalName>
