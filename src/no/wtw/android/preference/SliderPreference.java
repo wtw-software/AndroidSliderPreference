@@ -20,6 +20,7 @@ public class SliderPreference extends DialogPreference {
     protected int value;
     protected int seekBarValue;
     private int unitResource;
+    private int itemLabelResource;
 
     public SliderPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -38,7 +39,8 @@ public class SliderPreference extends DialogPreference {
             minValue = a.getInt(R.styleable.SliderPreference_minValue, 0);
             maxValue = a.getInt(R.styleable.SliderPreference_maxValue, 100);
             resolution = maxValue - minValue;
-            unitResource = a.getResourceId(R.styleable.SliderPreference_unitStringReference, 0);
+            unitResource = a.getResourceId(R.styleable.SliderPreference_unitPluralStringReference, 0);
+            itemLabelResource = a.getResourceId(R.styleable.SliderPreference_itemLabelStringArrayReference, 0);
         } catch (Exception e) {
             // Do nothing
         }
@@ -63,6 +65,8 @@ public class SliderPreference extends DialogPreference {
     private CharSequence getSummaryByValue(int value) {
         if (unitResource != 0)
             return getContext().getResources().getQuantityString(unitResource, value, value);
+        else if (itemLabelResource != 0)
+            return getContext().getResources().getStringArray(itemLabelResource)[value];
         else
             return String.valueOf(value);
     }
