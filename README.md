@@ -51,7 +51,7 @@ Android Slider Preference Library
     android:dialogMessage="@string/slider_message"
     app:minValue="30"
     app:maxValue="60"
-    app:unitStringReference="@plurals/seconds_plural" />
+    app:unitPluralStringReference="@plurals/seconds_plural" />
 ```
 ``` XML
 <!-- strings.xml -->
